@@ -102,6 +102,39 @@ app.get('/api/projects', function (req, res) {
     });
 });
 
+//CREATE a project
+app.post('/api/projects', function (req, res) {
+  // create new book with form data (`req.body`)
+  var newProject = new db.Projects({
+    name: req.body.name,
+    githubRepoUrl: req.body.githubRepoUrl,
+    deployedUrl: req.body.deployedUrl,
+    screenshot: req.body.screenshot
+  });
+});
+
+//GET by id
+// get one book
+app.get('/api/projects/:id', function (req, res) {
+  db.Projects.findOne({_id: req.params.id }, function(err, foundID) {
+    res.json(foundID);
+  });
+
+});
+
+
+//(PUT/PATCH) This endpoint will UPDATE a single project
+app.put('/api/projects/:id', function update(req, res) {
+
+// Create new project with form data (`req.body`)
+  var newProject = new db.Projects({
+    name: req.body.name,
+    githubRepoUrl: req.body.githubRepoUrl,
+    deployedUrl: req.body.deployedUrl,
+    screenshot: req.body.screenshot
+  });
+});
+
 
 /**********
  * SERVER *
