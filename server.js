@@ -102,30 +102,21 @@ app.get('/api/projects', function (req, res) {
     });
 });
 
-<<<<<<< HEAD
+
 //CREATE a project
 app.post('/api/projects', function (req, res) {
   // create new book with form data (`req.body`)
   var newProject = new db.Projects(req.body);
-
-});
-
-
-
-/*
-app.post('/api/projects', function (req, res) {
-  // create new book with form data (`req.body`)
-  var newProject = new db.Projects({
-    name: req.body.name,
-    githubRepoUrl: req.body.githubRepoUrl,
-    deployedUrl: req.body.deployedUrl,
-    screenshot: req.body.screenshot
+  // save new project to database
+  newProject.save(function(err, savedProject){
+    res.json(savedProject);
   });
 });
-*/
+
 //GET by id
 // get one book
 app.get('/api/projects/:id', function (req, res) {
+  // get project id from url params ('req.params')
   db.Projects.findOne({_id: req.params.id }, function(err, foundID) {
     res.json(foundID);
   });
@@ -143,6 +134,7 @@ app.put('/api/projects/:id', function update(req, res) {
     deployedUrl: req.body.deployedUrl,
     screenshot: req.body.screenshot
   });
+  console.log('')
 });
 
 
@@ -164,8 +156,7 @@ app.delete('/api/todos/:id', function (req, res) {
 
 
 
-=======
->>>>>>> 6232b3f96279d54db11ae26ff4a0d931f8af9388
+
 
 /**********
  * SERVER *
