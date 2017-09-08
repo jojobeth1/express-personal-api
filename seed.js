@@ -34,11 +34,19 @@ var new_project = [
 ];
 
 
+<<<<<<< HEAD
 db.Project.create(new_project, function(err, project){
+=======
+db.Projects.create(new_project, function(err, project){
+>>>>>>> 6232b3f96279d54db11ae26ff4a0d931f8af9388
    if (err){
      return console.log("Error:", err);
    }
    console.log(project);
+<<<<<<< HEAD
 
+=======
+   //console.log("Created new campsite", projects._id)
+>>>>>>> 6232b3f96279d54db11ae26ff4a0d931f8af9388
    process.exit(); // we're all done! Exit the program.
  })

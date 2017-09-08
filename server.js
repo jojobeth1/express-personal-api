@@ -74,11 +74,11 @@ app.get('/api', function apiIndex(req, res) {
     baseUrl: "https://intense-shore-41319.herokuapp.com/",
     endpoints: [
       {method: "GET", path: "/api", description: "Describes all available endpoints"},
-      {method: "GET", path: "/api/project", description: "Index of all of my projects"},
+      {method: "GET", path: "/api/projects", description: "Index of all of my projects"},
       {method: "GET", path: "/api/profile", description: "About me"},
-      {method: "POST", path: "/api/project", description: "Create a new project"},
-      {method: "PUT", path: "/api/project/:id", description: "Edit and update previous project."},
-      {method: "DELETE", path: "/api/project/:id", description: "Delete a project entry"}
+      {method: "POST", path: "/api/projects", description: "Create a new project"},
+      {method: "PUT", path: "/api/projects/:id", description: "Edit and update previous project."},
+      {method: "DELETE", path: "/api/projects/:id", description: "Delete a project entry"}
 
     ]
   })
@@ -102,6 +102,7 @@ app.get('/api/projects', function (req, res) {
     });
 });
 
+<<<<<<< HEAD
 //CREATE a project
 app.post('/api/projects', function (req, res) {
   // create new book with form data (`req.body`)
@@ -163,6 +164,8 @@ app.delete('/api/todos/:id', function (req, res) {
 
 
 
+=======
+>>>>>>> 6232b3f96279d54db11ae26ff4a0d931f8af9388
 
 /**********
  * SERVER *
